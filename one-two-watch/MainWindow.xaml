@@ -8,14 +8,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="362" Margin="202,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="383"/>
-        <Button Content="On" HorizontalAlignment="Left" Height="42" Margin="432,293,0,0" VerticalAlignment="Top" Width="76" Click="PowerOn"/>
-        <Button Content="Off" HorizontalAlignment="Left" Height="42" Margin="286,293,0,0" VerticalAlignment="Top" Width="76" Click="PowerOff"/>
-        <Grid>
+        <Ellipse Fill="Azure" HorizontalAlignment="Left" Height="362" Margin="202,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="383"/>
 
-            <TextBlock FontStyle="Normal" TextAlignment="Center" FontSize="50" x:Name="TimerDisplay" HorizontalAlignment="Left" Height="188" Margin="242,89,0,0" TextWrapping="Wrap" Text="One-to-Watch" VerticalAlignment="Top" Width="300" />
+        <Button Background="LawnGreen" Content="On" HorizontalAlignment="Left" Height="42" Margin="432,293,0,0" VerticalAlignment="Top" Width="76" Click="PowerOn"/>
+        <Button Background="Red" Content="Off" HorizontalAlignment="Left" Height="42" Margin="286,293,0,0" VerticalAlignment="Top" Width="76" Click="PowerOff" />
 
-        </Grid>
+        <TextBlock FontStyle="Normal" TextAlignment="Center" FontSize="50" x:Name="TimerDisplay" HorizontalAlignment="Left" Height="188" Margin="242,89,0,0" TextWrapping="Wrap" Text="One-to-Watch" VerticalAlignment="Top" Width="300" />
+
+        
 
     </Grid>
 </Window>

@@ -32,25 +32,27 @@ namespace one_two_watch
 
         }
 
+        DispatcherTimer _timer;
+        DateTime _start;
 
         // Show a running timer in a WPF window https://stackoverflow.com/questions/24922197/show-a-running-timer-in-a-wpf-window
         private void PowerOn(object sender, EventArgs e)
         {
-            DispatcherTimer timer;
-            DateTime start;
-
-            timer = new DispatcherTimer(new TimeSpan(0, 0, 0, 0, 50), DispatcherPriority.Background,
-                PowerOn, Dispatcher.CurrentDispatcher); timer.IsEnabled = true;
-            start = DateTime.Now;
+            
+            _timer = new DispatcherTimer(new TimeSpan(0, 0, 0, 0, 50), DispatcherPriority.Background,
+                PowerOn, Dispatcher.CurrentDispatcher); _timer.IsEnabled = true;
+            _start = DateTime.Now;
 
             // C#, datetime formatting, mont name, cultureinfo danish https://stackoverflow.com/questions/42744760/c-datetime-formatting-mont-name-cultureinfo
-            TimerDisplay.Text = Convert.ToString(start.ToString("F", new CultureInfo("da-DK")));
+            TimerDisplay.Text = Convert.ToString(_start.ToString("F", new CultureInfo("da-DK")));
         }
 
 
-        private void PowerOff(object sender, RoutedEventArgs e)
+        // Shutdown app on button click https://stackoverflow.com/questions/2820357/how-do-i-exit-a-wpf-application-programmatically
+        private void PowerOff(object sender, EventArgs e)
         {
-            TimerDisplay.Text = string.Empty;
+           Application.Current.Shutdown();
         }
+        
     }
 }
