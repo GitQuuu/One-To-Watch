@@ -4,13 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:one_two_watch"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="362" Margin="202,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="383"/>
-        <Button Content="On" HorizontalAlignment="Left" Height="42" Margin="432,293,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_On"/>
-        <Button Content="Off" HorizontalAlignment="Left" Height="42" Margin="286,293,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_Off"/>
-        <TextBlock HorizontalAlignment="Left" Margin="286,150,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="106" Width="222"/>
+        <Button Content="On" HorizontalAlignment="Left" Height="42" Margin="432,293,0,0" VerticalAlignment="Top" Width="76" Click="PowerOn"/>
+        <Button Content="Off" HorizontalAlignment="Left" Height="42" Margin="286,293,0,0" VerticalAlignment="Top" Width="76" Click="PowerOff"/>
+        <Grid>
+
+            <TextBlock FontStyle="Normal" TextAlignment="Center" FontSize="50" x:Name="TimerDisplay" HorizontalAlignment="Left" Height="167" Margin="267,110,0,0" TextWrapping="Wrap" Text="test" VerticalAlignment="Top" Width="275" />
+
+        </Grid>
 
     </Grid>
 </Window>

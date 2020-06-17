@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using one_two_watch.Models;
 
 namespace one_two_watch
 {
@@ -23,19 +24,30 @@ namespace one_two_watch
     {
         public MainWindow()
         {
+
+
             InitializeComponent();
 
-            
+
         }
 
-        private void Button_Click_On(object sender, RoutedEventArgs e)
+
+        // Show a running timer in a WPF window https://stackoverflow.com/questions/24922197/show-a-running-timer-in-a-wpf-window
+        private void PowerOn(object sender, EventArgs e)
         {
-            
+            DispatcherTimer timer;
+            DateTime start;
+
+            timer = new DispatcherTimer(new TimeSpan(0, 0, 0, 0, 50), DispatcherPriority.Background,
+                PowerOn, Dispatcher.CurrentDispatcher); timer.IsEnabled = true;
+            start = DateTime.Now;
+            TimerDisplay.Text = Convert.ToString(DateTime.Now);
         }
 
-        private void Button_Click_Off(object sender, RoutedEventArgs e)
-        {
 
+        private void PowerOff(object sender, RoutedEventArgs e)
+        {
+            TimerDisplay.Text = "";
         }
     }
 }
