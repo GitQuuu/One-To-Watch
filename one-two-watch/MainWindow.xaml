@@ -13,7 +13,7 @@
         <Button Content="Off" HorizontalAlignment="Left" Height="42" Margin="286,293,0,0" VerticalAlignment="Top" Width="76" Click="PowerOff"/>
         <Grid>
 
-            <TextBlock FontStyle="Normal" TextAlignment="Center" FontSize="50" x:Name="TimerDisplay" HorizontalAlignment="Left" Height="167" Margin="267,110,0,0" TextWrapping="Wrap" Text="test" VerticalAlignment="Top" Width="275" />
+            <TextBlock FontStyle="Normal" TextAlignment="Center" FontSize="50" x:Name="TimerDisplay" HorizontalAlignment="Left" Height="188" Margin="242,89,0,0" TextWrapping="Wrap" Text="One-to-Watch" VerticalAlignment="Top" Width="300" />
 
         </Grid>
 

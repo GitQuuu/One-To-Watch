@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,13 +42,15 @@ namespace one_two_watch
             timer = new DispatcherTimer(new TimeSpan(0, 0, 0, 0, 50), DispatcherPriority.Background,
                 PowerOn, Dispatcher.CurrentDispatcher); timer.IsEnabled = true;
             start = DateTime.Now;
-            TimerDisplay.Text = Convert.ToString(DateTime.Now);
+
+            // C#, datetime formatting, mont name, cultureinfo danish https://stackoverflow.com/questions/42744760/c-datetime-formatting-mont-name-cultureinfo
+            TimerDisplay.Text = Convert.ToString(start.ToString("F", new CultureInfo("da-DK")));
         }
 
 
         private void PowerOff(object sender, RoutedEventArgs e)
         {
-            TimerDisplay.Text = "";
+            TimerDisplay.Text = string.Empty;
         }
     }
 }
