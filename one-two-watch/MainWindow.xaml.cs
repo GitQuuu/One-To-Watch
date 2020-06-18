@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using one_two_watch.Models;
+
 
 namespace one_two_watch
 {
@@ -26,9 +26,7 @@ namespace one_two_watch
         public MainWindow()
         {
 
-
             InitializeComponent();
-
 
         }
 
