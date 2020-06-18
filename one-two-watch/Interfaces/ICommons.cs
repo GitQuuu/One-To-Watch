@@ -8,8 +8,8 @@ namespace one_two_watch.Interfaces
 {
     interface ICommons
     {
-        void Start();
-        void Stop();
-
+        void PowerOn(object sender, EventArgs e);
+        void PowerOff(object sender, EventArgs e);
+        void Mode(object sender, EventArgs e);
     }
 }

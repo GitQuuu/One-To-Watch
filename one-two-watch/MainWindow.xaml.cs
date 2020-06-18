@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using one_two_watch.Interfaces;
 
 
 namespace one_two_watch
@@ -21,7 +22,7 @@ namespace one_two_watch
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window , ICommons
     {
         public MainWindow()
         {
@@ -34,9 +35,8 @@ namespace one_two_watch
         DateTime _start;
 
         // Show a running timer in a WPF window https://stackoverflow.com/questions/24922197/show-a-running-timer-in-a-wpf-window
-        private void PowerOn(object sender, EventArgs e)
+        public void PowerOn(object sender, EventArgs e)
         {
-            
             _timer = new DispatcherTimer(new TimeSpan(0, 0, 0, 0, 50), DispatcherPriority.Background,
                 PowerOn, Dispatcher.CurrentDispatcher); _timer.IsEnabled = true;
             _start = DateTime.Now;
@@ -46,11 +46,16 @@ namespace one_two_watch
         }
 
 
+
         // Shutdown app on button click https://stackoverflow.com/questions/2820357/how-do-i-exit-a-wpf-application-programmatically
-        private void PowerOff(object sender, EventArgs e)
+        public void PowerOff(object sender, EventArgs e)
         {
-           Application.Current.Shutdown();
+            Application.Current.Shutdown();
         }
-        
+
+        public void Mode(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
