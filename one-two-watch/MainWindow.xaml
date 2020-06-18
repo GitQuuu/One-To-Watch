@@ -10,12 +10,13 @@
     <Grid>
         <Ellipse Fill="Azure" HorizontalAlignment="Left" Height="362" Margin="202,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="383"/>
 
-        <Button Background="LawnGreen" Content="On" HorizontalAlignment="Left" Height="42" Margin="432,293,0,0" VerticalAlignment="Top" Width="76" Click="PowerOn"/>
-        <Button Background="Red" Content="Off" HorizontalAlignment="Left" Height="42" Margin="286,293,0,0" VerticalAlignment="Top" Width="76" Click="PowerOff" />
+        <Button Background="LawnGreen" Content="Power On" HorizontalAlignment="Left" Height="42" Margin="357,282,0,0" VerticalAlignment="Top" Width="76" Click="PowerOn"/>
+        <Button Background="Red" Content="Hide Display" HorizontalAlignment="Left" Height="42" Margin="259,282,0,0" VerticalAlignment="Top" Width="76" Click="ShowDisplay" />
+        <Button Background="Bisque" Content="Show Display" HorizontalAlignment="Left" Height="42" Margin="453,282,0,0" VerticalAlignment="Top" Width="76" Click="HideDisplay" />
 
         <TextBlock FontStyle="Normal" TextAlignment="Center" FontSize="50" x:Name="TimerDisplay" HorizontalAlignment="Left" Height="188" Margin="242,89,0,0" TextWrapping="Wrap" Text="One-to-Watch" VerticalAlignment="Top" Width="300" />
 
-        
+
 
     </Grid>
 </Window>
