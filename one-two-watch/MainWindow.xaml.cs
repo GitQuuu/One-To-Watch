@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using one_two_watch.Interfaces;
+using one_two_watch.Models;
 
 
 namespace one_two_watch
@@ -44,7 +45,7 @@ namespace one_two_watch
             // C#, datetime formatting, mont name, cultureinfo danish https://stackoverflow.com/questions/42744760/c-datetime-formatting-mont-name-cultureinfo
             Display.Text = Convert.ToString(_start.ToString("F", new CultureInfo("da-DK")));
             
-
+            
         }
 
 
@@ -52,14 +53,45 @@ namespace one_two_watch
         
         public void ShowDisplay(object sender, EventArgs e)
         {
-            Display.Visibility = Visibility.Collapsed;
+            if (Menu.IsVisible)
+            {
+                Menu.Visibility = Visibility.Hidden;
+                Display.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Display.Visibility = Visibility.Visible;
+            }
+           
         }
 
         public void HideDisplay(object sender, EventArgs e)
         {
-            Display.Visibility = Visibility.Visible;
+            if (Menu.IsVisible || Display.IsVisible)
+            {
+                Menu.Visibility = Visibility.Hidden;
+                Display.Visibility = Visibility.Hidden;
+
+            }
         }
 
-        
+
+        private void PowerOff(object sender, RoutedEventArgs e)
+        {
+           Application.Current.Shutdown();
+        }
+
+        private void Mode(object sender, RoutedEventArgs e)
+        {
+            if (Display.IsVisible)
+            {
+                Display.Visibility = Visibility.Hidden;
+                Menu.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Menu.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

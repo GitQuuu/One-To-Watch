@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace one_two_watch.Models
 {
-    public class Watch
+    class StopWatch
     {
-        public DateTime LocalTime { get; set; }
-        public DateTime Timespan { get; set; }
-
-        public DateTime Date { get; set; }
-
     }
 }
