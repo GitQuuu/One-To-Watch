@@ -111,5 +111,17 @@ namespace one_two_watch
         {
             throw new NotImplementedException();
         }
+
+        private void StartTimerClicked(object sender, RoutedEventArgs e) 
+        {
+            StopWatch newStopWatch = new StopWatch();
+            newStopWatch.StartTimer();
+
+        }
+
+        private void StopTimerClicked(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

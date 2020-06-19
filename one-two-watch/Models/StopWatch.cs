@@ -7,20 +7,22 @@ using System.Threading.Tasks;
 
 namespace one_two_watch.Models
 {
-    class StopWatch:Watch
+     class StopWatch:Watch
     {
-        public static TimeSpan Duration { get; set; }
-        public static DateTime TimeStart { get; set; }
-        public static DateTime TimeStop { get; set; }
+        public  TimeSpan Duration { get; set; }
+        public  DateTime TimeStart { get; set; }
+        public  DateTime TimeStop { get; set; }
 
-        public void StartTimer()
+        public StopWatch StartTimer()
         {
+            TimeStart = DateTime.Now;
 
+            return new StopWatch();
         }
 
-        public void StopTimer()
+        public void StopTimer(StopWatch stopWatch)
         {
-
+            stopWatch.TimeStop = DateTime.Now;
         }
     }
 }
