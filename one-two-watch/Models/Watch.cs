@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace one_two_watch.Models
 {
-    class Menu
+    abstract class Watch
     {
         public DateTime LocalTime { get; set; }
         public DateTime Timespan { get; set; }
 
         public DateTime Date { get; set; }
+
     }
 }
