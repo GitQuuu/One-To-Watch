@@ -18,12 +18,22 @@
         </Grid>
         <TextBlock x:Name="Display" HorizontalAlignment="Left" Height="164" Margin="250,86,0,0" TextWrapping="Wrap" Text="One-Two-Watch" FontSize="45" TextAlignment="Center" FontStyle="Normal" Visibility="Collapsed" VerticalAlignment="Top" Width="279" Grid.ColumnSpan="2"/>
 
-        <TextBlock x:Name="Menu" TextAlignment="Center" FontSize="45"  HorizontalAlignment="Left" Height="180" Margin="250,86,0,0" VerticalAlignment="Top" Width="279" Grid.ColumnSpan="2" Visibility="Collapsed" ><InlineUIContainer>
+        <TextBlock x:Name="Menu" TextAlignment="Center" FontSize="45"  HorizontalAlignment="Left" Height="180" Margin="250,86,0,0" VerticalAlignment="Top" Width="279" Grid.ColumnSpan="2" Visibility="Hidden" ><InlineUIContainer>
                 <Button Content="Stopwatch" FontSize="15" Width="75" Click="StopWatch"/>
             </InlineUIContainer>
             <InlineUIContainer>
                 <Button Content="Countdown" FontSize="15" Width="75" Click="CountDown"/>
             </InlineUIContainer></TextBlock>
+
+        <Grid Grid.ColumnSpan="2">
+            <TextBlock x:Name="StopWatchBlock" HorizontalAlignment="Left" Height="138" Margin="250,86,0,0" TextWrapping="Wrap" Text="Stopwatch" FontSize="45" TextAlignment="Center" FontStyle="Normal" Visibility="Hidden" VerticalAlignment="Top" Width="279"/>
+            <TextBlock x:Name="StopWatchButtons" HorizontalAlignment="Left" Height="60" Margin="249,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" Visibility="Hidden"><Run Text=" "/><InlineUIContainer>
+                    <Button Content="Stop Timer" Width="75"/>
+                </InlineUIContainer><InlineUIContainer>
+                    <Button  Content="Start Timer" Width="75"/>
+                </InlineUIContainer></TextBlock>
+        </Grid>
+
 
 
         <Button Background="LawnGreen" Content="Power On" HorizontalAlignment="Left" Height="25" Margin="42.25,299,0,0" VerticalAlignment="Top" Width="68" Click="PowerOn" Grid.Column="1"/>

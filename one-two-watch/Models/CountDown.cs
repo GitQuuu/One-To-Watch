@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace one_two_watch.Models
 {
-    class CountDown
+    class CountDown:Watch
     {
     }
 }

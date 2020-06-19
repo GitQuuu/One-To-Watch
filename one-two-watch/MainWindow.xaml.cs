@@ -53,25 +53,25 @@ namespace one_two_watch
         
         public void ShowDisplay(object sender, EventArgs e)
         {
-            if (Menu.IsVisible)
+            if (!Display.IsVisible)
             {
                 Menu.Visibility = Visibility.Hidden;
+                StopWatchBlock.Visibility = Visibility.Hidden;
                 Display.Visibility = Visibility.Visible;
             }
-            else
-            {
-                Display.Visibility = Visibility.Visible;
-            }
+           
            
         }
 
         public void HideDisplay(object sender, EventArgs e)
         {
-            if (Menu.IsVisible || Display.IsVisible)
+            if (Menu.IsVisible || Display.IsVisible || StopWatchBlock.IsVisible || StopWatchBlock.IsVisible || StopWatchButtons.IsVisible)
             {
                 Menu.Visibility = Visibility.Hidden;
                 Display.Visibility = Visibility.Hidden;
-
+                StopWatchBlock.Visibility = Visibility.Hidden;
+                StopWatchBlock.Visibility = Visibility.Hidden;
+                StopWatchButtons.Visibility = Visibility.Hidden;
             }
         }
 
@@ -83,20 +83,28 @@ namespace one_two_watch
 
         private void Mode(object sender, RoutedEventArgs e)
         {
-            if (Display.IsVisible)
+            if (!Menu.IsVisible)
             {
                 Display.Visibility = Visibility.Hidden;
+                StopWatchBlock.Visibility = Visibility.Hidden;
                 Menu.Visibility = Visibility.Visible;
+                
+
             }
-            else
-            {
-                Menu.Visibility = Visibility.Visible;
-            }
+           
         }
 
         private void StopWatch(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (!StopWatchBlock.IsVisible)
+            {
+                Display.Visibility = Visibility.Collapsed;
+                Menu.Visibility = Visibility.Collapsed;
+                StopWatchBlock.Visibility = Visibility.Visible;
+                StopWatchButtons.Visibility = Visibility.Visible;
+
+            }
+            
         }
 
         private void CountDown(object sender, RoutedEventArgs e)
