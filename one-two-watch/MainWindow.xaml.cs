@@ -25,11 +25,12 @@ namespace one_two_watch
     /// </summary>
     public partial class MainWindow : Window , ICommons
     {
+    
+
         public MainWindow()
         {
 
             InitializeComponent();
-            
         }
 
         private DispatcherTimer _timer;
@@ -112,10 +113,11 @@ namespace one_two_watch
             throw new NotImplementedException();
         }
 
-        private void StartTimerClicked(object sender, RoutedEventArgs e) 
+        private void StartTimerClicked(object sender, RoutedEventArgs e)
         {
             StopWatch newStopWatch = new StopWatch();
             newStopWatch.StartTimer();
+            StopWatchBlock.Text = newStopWatch.TimeStart.ToLongTimeString();
 
         }
 

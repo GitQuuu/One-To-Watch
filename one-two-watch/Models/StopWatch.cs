@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace one_two_watch.Models
 {
-     class StopWatch:Watch
+    public class StopWatch:Watch
     {
         public  TimeSpan Duration { get; set; }
         public  DateTime TimeStart { get; set; }
@@ -24,5 +24,6 @@ namespace one_two_watch.Models
         {
             stopWatch.TimeStop = DateTime.Now;
         }
+
     }
 }
