@@ -42,8 +42,9 @@ namespace one_two_watch
             _start = DateTime.Now;
 
             // C#, datetime formatting, mont name, cultureinfo danish https://stackoverflow.com/questions/42744760/c-datetime-formatting-mont-name-cultureinfo
-            TimerDisplay.Text = Convert.ToString(_start.ToString("F", new CultureInfo("da-DK")));
+            Display.Text = Convert.ToString(_start.ToString("F", new CultureInfo("da-DK")));
             
+
         }
 
 
@@ -51,12 +52,12 @@ namespace one_two_watch
         
         public void ShowDisplay(object sender, EventArgs e)
         {
-            TimerDisplay.Visibility = Visibility.Collapsed;
+            Display.Visibility = Visibility.Collapsed;
         }
 
         public void HideDisplay(object sender, EventArgs e)
         {
-            TimerDisplay.Visibility = Visibility.Visible;
+            Display.Visibility = Visibility.Visible;
         }
 
         

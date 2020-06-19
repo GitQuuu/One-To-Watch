@@ -13,8 +13,9 @@
         <Button Background="LawnGreen" Content="Power On" HorizontalAlignment="Left" Height="42" Margin="357,282,0,0" VerticalAlignment="Top" Width="76" Click="PowerOn"/>
         <Button Background="Red" Content="Hide Display" HorizontalAlignment="Left" Height="42" Margin="259,282,0,0" VerticalAlignment="Top" Width="76" Click="ShowDisplay" />
         <Button Background="Bisque" Content="Show Display" HorizontalAlignment="Left" Height="42" Margin="453,282,0,0" VerticalAlignment="Top" Width="76" Click="HideDisplay" />
+        <TextBlock x:Name="Display" HorizontalAlignment="Left" Height="164" Margin="250,86,0,0" TextWrapping="Wrap" Text="One-Two-Watch" FontSize="30" TextAlignment="Center" FontStyle="Normal" Visibility="Collapsed" VerticalAlignment="Top" Width="279"/>
 
-        <TextBlock FontStyle="Normal" TextAlignment="Center" FontSize="50" x:Name="TimerDisplay" HorizontalAlignment="Left" Height="188" Margin="242,89,0,0" TextWrapping="Wrap" Text="One-to-Watch" VerticalAlignment="Top" Width="300" />
+
 
 
 
