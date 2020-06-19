@@ -93,5 +93,15 @@ namespace one_two_watch
                 Menu.Visibility = Visibility.Visible;
             }
         }
+
+        private void StopWatch(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CountDown(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
