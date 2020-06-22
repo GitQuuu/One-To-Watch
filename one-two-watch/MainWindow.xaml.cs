@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -113,17 +115,18 @@ namespace one_two_watch
             throw new NotImplementedException();
         }
 
+       StopWatch newStopwatch = new StopWatch();
         private void StartTimerClicked(object sender, RoutedEventArgs e)
         {
-            StopWatch newStopWatch = new StopWatch();
-            newStopWatch.StartTimer();
-            StopWatchBlock.Text = newStopWatch.TimeStart.ToLongTimeString();
-
+            newStopwatch.StartTimer();
+            TimeStampStart.Text = Convert.ToString(newStopwatch.TimeStart.ToString("F", new CultureInfo("da-DK")));
+           
         }
 
         private void StopTimerClicked(object sender, RoutedEventArgs e)
         {
-            
+            newStopwatch.StopTimer();
+            TimeStampStop.Text = Convert.ToString(newStopwatch.TimeStop.ToString("F", new CultureInfo("da-DK")));
         }
     }
 }

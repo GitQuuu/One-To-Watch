@@ -26,12 +26,14 @@
             </InlineUIContainer></TextBlock>
 
         <Grid Grid.ColumnSpan="2">
-            <TextBlock x:Name="StopWatchBlock" HorizontalAlignment="Left" Height="138" Margin="250,86,0,0" TextWrapping="Wrap" Text="Stopwatch" FontSize="45" TextAlignment="Center" FontStyle="Normal" Visibility="Visible" VerticalAlignment="Top" Width="279"/>
+            <TextBlock x:Name="StopWatchBlock" HorizontalAlignment="Left" Height="138" Margin="250,86,0,0" TextWrapping="Wrap" FontSize="45" TextAlignment="Center" FontStyle="Normal" Visibility="Visible" VerticalAlignment="Top" Width="279"><Run Text="Stopwatch"/></TextBlock>
             <TextBlock x:Name="StopWatchButtons" HorizontalAlignment="Left" Height="24" Margin="314,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Visibility="Visible"><Run Text=" "/><InlineUIContainer>
                     <Button Content="Stop Timer" Width="75" Click="StopTimerClicked"/>
                 </InlineUIContainer><InlineUIContainer>
                     <Button  Content="Start Timer" Width="75" Click="StartTimerClicked"/>
                 </InlineUIContainer></TextBlock>
+            <TextBlock x:Name="TimeStampStart" HorizontalAlignment="Left" Height="32" Margin="457,216,0,0" TextWrapping="Wrap" Text="Timestamp Start" VerticalAlignment="Top" Width="134"/>
+            <TextBlock x:Name="TimeStampStop" HorizontalAlignment="Left" Height="32" Margin="227,216,0,0" TextWrapping="Wrap" Text="Timestamp Stop" VerticalAlignment="Top" Width="133"/>
         </Grid>
 
 

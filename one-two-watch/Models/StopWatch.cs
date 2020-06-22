@@ -20,9 +20,9 @@ namespace one_two_watch.Models
             return new StopWatch();
         }
 
-        public void StopTimer(StopWatch stopWatch)
+        public void StopTimer()
         {
-            stopWatch.TimeStop = DateTime.Now;
+            TimeStop = DateTime.Now;
         }
 
     }
