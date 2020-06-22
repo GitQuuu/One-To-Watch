@@ -61,6 +61,9 @@ namespace one_two_watch
                 Menu.Visibility = Visibility.Hidden;
                 StopWatchBlock.Visibility = Visibility.Hidden;
                 Display.Visibility = Visibility.Visible;
+                TimeStampStart.Visibility = Visibility.Hidden;
+                TimeStampStop.Visibility = Visibility.Hidden;
+                Duration.Visibility = Visibility.Hidden;
             }
            
            
@@ -75,6 +78,9 @@ namespace one_two_watch
                 StopWatchBlock.Visibility = Visibility.Hidden;
                 StopWatchBlock.Visibility = Visibility.Hidden;
                 StopWatchButtons.Visibility = Visibility.Hidden;
+                TimeStampStart.Visibility = Visibility.Hidden;
+                TimeStampStop.Visibility = Visibility.Hidden;
+                Duration.Visibility = Visibility.Hidden;
             }
         }
 
@@ -101,10 +107,11 @@ namespace one_two_watch
         {
             if (!StopWatchBlock.IsVisible)
             {
-                Display.Visibility = Visibility.Collapsed;
+                Display.Visibility = Visibility.Visible;
                 Menu.Visibility = Visibility.Collapsed;
-                StopWatchBlock.Visibility = Visibility.Visible;
+                StopWatchBlock.Visibility = Visibility.Hidden;
                 StopWatchButtons.Visibility = Visibility.Visible;
+
 
             }
             
@@ -120,13 +127,23 @@ namespace one_two_watch
         {
             newStopwatch.StartTimer();
             TimeStampStart.Text = Convert.ToString(newStopwatch.TimeStart.ToString("F", new CultureInfo("da-DK")));
-           
+            TimeStampStart.Visibility = Visibility.Visible;
+            TimeStampStop.Visibility = Visibility.Visible;
+            Duration.Visibility = Visibility.Hidden;
+
         }
 
         private void StopTimerClicked(object sender, RoutedEventArgs e)
         {
             newStopwatch.StopTimer();
             TimeStampStop.Text = Convert.ToString(newStopwatch.TimeStop.ToString("F", new CultureInfo("da-DK")));
+
+            newStopwatch.Duration = newStopwatch.TimeStop - newStopwatch.TimeStart;
+            Duration.Text = newStopwatch.Duration.ToString();
+
+            TimeStampStart.Visibility = Visibility.Visible;
+            TimeStampStop.Visibility = Visibility.Visible;
+            Duration.Visibility = Visibility.Visible;
         }
     }
 }
