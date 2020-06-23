@@ -9,23 +9,22 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="35*"/>
-            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Ellipse Fill="Azure" HorizontalAlignment="Left" Height="362" Margin="202,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="383" Grid.ColumnSpan="2"/>
-        <Grid>
+        <Ellipse Fill="Azure" HorizontalAlignment="Left" Height="362" Margin="202,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="383"/>
+        <Grid Margin="0,0,477,0">
 
         </Grid>
-        <TextBlock x:Name="Display" HorizontalAlignment="Left" Height="164" Margin="250,86,0,0" TextWrapping="Wrap" Text="One-Two-Watch" FontSize="45" TextAlignment="Center" FontStyle="Normal" Visibility="Collapsed" VerticalAlignment="Top" Width="279" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="Display" HorizontalAlignment="Left" Height="164" Margin="250,86,0,0" TextWrapping="Wrap" Text="One-Two-Watch" FontSize="45" TextAlignment="Center" FontStyle="Normal" Visibility="Collapsed" VerticalAlignment="Top" Width="279"/>
 
-        <TextBlock x:Name="Menu" TextAlignment="Center" FontSize="45"  HorizontalAlignment="Left" Height="180" Margin="250,86,0,0" VerticalAlignment="Top" Width="279" Grid.ColumnSpan="2" Visibility="Hidden" ><InlineUIContainer>
+        <TextBlock x:Name="Menu" TextAlignment="Center" FontSize="45"  HorizontalAlignment="Left" Height="180" Margin="250,86,0,0" VerticalAlignment="Top" Width="279" Visibility="Hidden" ><InlineUIContainer>
                 <Button Content="Stopwatch" FontSize="15" Width="75" Click="StopWatch"/>
             </InlineUIContainer>
             <InlineUIContainer>
                 <Button Content="Countdown" FontSize="15" Width="75" Click="CountDown"/>
             </InlineUIContainer></TextBlock>
 
-        <Grid Grid.ColumnSpan="2">
+        <Grid>
             <TextBlock x:Name="StopWatchBlock" HorizontalAlignment="Left" Height="138" Margin="250,86,0,0" TextWrapping="Wrap" FontSize="45" TextAlignment="Center" FontStyle="Normal" Visibility="Visible" VerticalAlignment="Top" Width="279"><Run Text="Stopwatch"/></TextBlock>
             <TextBlock x:Name="StopWatchButtons" HorizontalAlignment="Left" Height="24" Margin="314,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Visibility="Hidden"><Run Text=" "/><InlineUIContainer>
                     <Button Content="Stop Timer" Width="75" Click="StopTimerClicked"/>
@@ -40,11 +39,11 @@
 
 
 
-        <Button Background="LawnGreen" Content="Power On" HorizontalAlignment="Left" Height="25" Margin="42.25,299,0,0" VerticalAlignment="Top" Width="68" Click="PowerOn" Grid.Column="1"/>
-        <Button Background="Red" Content="Hide Display" HorizontalAlignment="Left" Height="25" Margin="259,299,0,0" VerticalAlignment="Top" Width="79" Click="HideDisplay" Grid.ColumnSpan="2" />
-        <Button Background="Bisque" Content="Show Display" HorizontalAlignment="Left" Height="25" Margin="130.25,299,0,0" VerticalAlignment="Top" Width="84" Click="ShowDisplay" Grid.Column="1" />
-        <Button Content="Power Off" HorizontalAlignment="Left" Margin="42.25,331,0,0" VerticalAlignment="Top" Width="68" Height="21" Click="PowerOff" Grid.Column="1"/>
-        <Button Content="Mode" HorizontalAlignment="Left" Height="21" Margin="130.25,331,0,0" VerticalAlignment="Top" Width="36" Click="Mode" Grid.Column="1"/>
+        <Button Background="LawnGreen" Content="Power On" HorizontalAlignment="Left" Height="25" Margin="357,299,0,0" VerticalAlignment="Top" Width="68" Click="PowerOn"/>
+        <Button Background="Red" Content="Hide Display" HorizontalAlignment="Left" Height="25" Margin="259,299,0,0" VerticalAlignment="Top" Width="79" Click="HideDisplay" />
+        <Button Background="Bisque" Content="Show Display" HorizontalAlignment="Left" Height="25" Margin="445,299,0,0" VerticalAlignment="Top" Width="84" Click="ShowDisplay" />
+        <Button Content="Power Off" HorizontalAlignment="Left" Margin="357,331,0,0" VerticalAlignment="Top" Width="68" Height="21" Click="PowerOff"/>
+        <Button Content="Mode" HorizontalAlignment="Left" Height="21" Margin="445,331,0,0" VerticalAlignment="Top" Width="36" Click="Mode"/>
 
 
 
