@@ -158,7 +158,7 @@ namespace one_two_watch
 
         private void CountDownStart(object sender, RoutedEventArgs e)
         {
-            // How to convert Text box value to int
+            // How to convert Text box value to int http://www.beansoftware.com/ASP.NET-FAQ/TextBox-Integer.aspx
             newCountDown.CountdownTime = Convert.ToInt32(CountdownInput.Text);
             newCountDown.Start();
            
