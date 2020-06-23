@@ -43,7 +43,7 @@
                     <Label Content="Input in secounds" RenderTransformOrigin="-1.174,1.25" FontSize="30"/>
 
                 </InlineUIContainer><InlineUIContainer>
-                    <TextBox x:Name="CountdownInput" Height="42" TextWrapping="Wrap" Text="H" Width="96" FontSize="30" />
+                    <TextBox x:Name="CountdownInput"  Height="42" TextWrapping="Wrap" Width="96" FontSize="30" />
 
                 </InlineUIContainer><InlineUIContainer>
                     <TextBlock x:Name="DisplayCountDown" x:FieldModifier="public" TextWrapping="Wrap" Text="DisplayCountDown" FontSize="25" Height="72" Width="214"/>

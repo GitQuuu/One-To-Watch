@@ -54,9 +54,12 @@ namespace one_two_watch
             
         }
 
+        private void PowerOff(object sender, RoutedEventArgs e)
+        {
+            Dispatcher.CurrentDispatcher.BeginInvokeShutdown(DispatcherPriority.Background);
+        }
 
 
-        
         public void ShowDisplay(object sender, EventArgs e)
         {
             if (!Display.IsVisible)
@@ -91,11 +94,6 @@ namespace one_two_watch
         }
 
 
-        private void PowerOff(object sender, RoutedEventArgs e)
-        {
-           Application.Current.Shutdown();
-        }
-
         private void Mode(object sender, RoutedEventArgs e)
         {
             if (!Menu.IsVisible)
@@ -115,8 +113,9 @@ namespace one_two_watch
             {
                 Display.Visibility = Visibility.Visible;
                 Menu.Visibility = Visibility.Collapsed;
+                CountdownGrid.Visibility = Visibility.Hidden;
                 StopWatchGrid.Visibility = Visibility.Visible;
-               
+
 
 
             }
@@ -159,7 +158,8 @@ namespace one_two_watch
 
         private void CountDownStart(object sender, RoutedEventArgs e)
         {
-            newCountDown.CountdownTime = 10;
+            // How to convert Text box value to int
+            newCountDown.CountdownTime = Convert.ToInt32(CountdownInput.Text);
             newCountDown.Start();
            
         }

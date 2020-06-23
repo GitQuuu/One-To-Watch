@@ -1,19 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+using one_two_watch.Annotations;
 
 namespace one_two_watch.Models
 {
-    public class CountDown:Watch
+    public class CountDown:Watch, INotifyPropertyChanged
     {
         // Simple Countdown with c# WPF  https://www.youtube.com/watch?v=o_F_v_ISeDk
         private int countdownTime;
+
         public int CountdownTime { get; set; }
-       
+
         public DispatcherTimer CounTDownTimer;
 
         public void Start()
@@ -39,5 +43,12 @@ namespace one_two_watch.Models
             }
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
