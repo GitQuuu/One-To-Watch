@@ -57,6 +57,7 @@ namespace one_two_watch
         private void PowerOff(object sender, RoutedEventArgs e)
         {
             Dispatcher.CurrentDispatcher.BeginInvokeShutdown(DispatcherPriority.Background);
+            
         }
 
 
@@ -160,6 +161,7 @@ namespace one_two_watch
         {
             // How to convert Text box value to int http://www.beansoftware.com/ASP.NET-FAQ/TextBox-Integer.aspx
             newCountDown.CountdownTime = Convert.ToInt32(CountdownInput.Text);
+            
             newCountDown.Start();
            
         }

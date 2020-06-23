@@ -38,7 +38,7 @@
         </Grid>
 
         <!--Coutndown-->
-        <Grid x:Name="CountdownGrid" Visibility="Visible" >
+        <Grid x:Name="CountdownGrid" Visibility="Hidden" >
             <TextBlock x:Name="CountDownBlock" HorizontalAlignment="Left" Height="192" Margin="249,64,0,0" TextWrapping="Wrap" FontSize="45" TextAlignment="Center" FontStyle="Normal" VerticalAlignment="Top" Width="279"><Run Text=""/><InlineUIContainer>
                     <Label Content="Input in secounds" RenderTransformOrigin="-1.174,1.25" FontSize="30"/>
 
