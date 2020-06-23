@@ -27,7 +27,7 @@
 
         <Grid Grid.ColumnSpan="2">
             <TextBlock x:Name="StopWatchBlock" HorizontalAlignment="Left" Height="138" Margin="250,86,0,0" TextWrapping="Wrap" FontSize="45" TextAlignment="Center" FontStyle="Normal" Visibility="Visible" VerticalAlignment="Top" Width="279"><Run Text="Stopwatch"/></TextBlock>
-            <TextBlock x:Name="StopWatchButtons" HorizontalAlignment="Left" Height="24" Margin="314,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Visibility="Visible"><Run Text=" "/><InlineUIContainer>
+            <TextBlock x:Name="StopWatchButtons" HorizontalAlignment="Left" Height="24" Margin="314,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Visibility="Hidden"><Run Text=" "/><InlineUIContainer>
                     <Button Content="Stop Timer" Width="75" Click="StopTimerClicked"/>
                 </InlineUIContainer><InlineUIContainer>
                     <Button  Content="Start Timer" Width="75" Click="StartTimerClicked"/>
