@@ -15,17 +15,18 @@
         <Grid Margin="0,0,477,0">
 
         </Grid>
-        <TextBlock x:Name="Display" HorizontalAlignment="Left" Height="164" Margin="250,86,0,0" TextWrapping="Wrap" Text="One-Two-Watch" FontSize="45" TextAlignment="Center" FontStyle="Normal" Visibility="Collapsed" VerticalAlignment="Top" Width="279"/>
+        <TextBlock x:Name="Display" HorizontalAlignment="Left" Height="164" Margin="250,86,0,0" TextWrapping="Wrap" Text="One-Two-Watch" FontSize="35" TextAlignment="Center" FontStyle="Normal" Visibility="Collapsed" VerticalAlignment="Top" Width="279"/>
 
-        <TextBlock x:Name="Menu" TextAlignment="Center" FontSize="45"  HorizontalAlignment="Left" Height="180" Margin="250,86,0,0" VerticalAlignment="Top" Width="279" Visibility="Hidden" ><InlineUIContainer>
+        <TextBlock x:Name="Menu" TextAlignment="Center" FontSize="45"  HorizontalAlignment="Left" Height="180" Margin="250,46,0,0" VerticalAlignment="Top" Width="279" Visibility="Hidden" ><InlineUIContainer>
                 <Button Content="Stopwatch" FontSize="15" Width="75" Click="StopWatch"/>
             </InlineUIContainer>
             <InlineUIContainer>
                 <Button Content="Countdown" FontSize="15" Width="75" Click="CountDown"/>
             </InlineUIContainer></TextBlock>
 
+        <!--Stopwatch-->
         <Grid>
-            <TextBlock x:Name="StopWatchBlock" HorizontalAlignment="Left" Height="138" Margin="250,86,0,0" TextWrapping="Wrap" FontSize="45" TextAlignment="Center" FontStyle="Normal" Visibility="Visible" VerticalAlignment="Top" Width="279"><Run Text="Stopwatch"/></TextBlock>
+            <TextBlock x:Name="StopWatchBlock" HorizontalAlignment="Left" Height="138" Margin="250,86,0,0" TextWrapping="Wrap" FontSize="45" TextAlignment="Center" FontStyle="Normal" Visibility="Hidden" VerticalAlignment="Top" Width="279"><Run Text="Stopwatch"/></TextBlock>
             <TextBlock x:Name="StopWatchButtons" HorizontalAlignment="Left" Height="24" Margin="314,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Visibility="Hidden"><Run Text=" "/><InlineUIContainer>
                     <Button Content="Stop Timer" Width="75" Click="StopTimerClicked"/>
                 </InlineUIContainer><InlineUIContainer>
@@ -33,8 +34,33 @@
                 </InlineUIContainer></TextBlock>
             <TextBlock x:Name="TimeStampStart" HorizontalAlignment="Left" Height="32" Margin="441,229,0,0" TextWrapping="Wrap" Text="Timestamp Start" VerticalAlignment="Top" Width="134" Visibility="Hidden"/>
             <TextBlock x:Name="TimeStampStop" HorizontalAlignment="Left" Height="32" Margin="234,229,0,0" TextWrapping="Wrap" Text="Timestamp Stop" VerticalAlignment="Top" Width="134" Visibility="Hidden"/>
-            <TextBlock x:Name="Duration" Foreground="MediumVioletRed" FontSize="20" FontStyle="Italic" TextAlignment="Center" HorizontalAlignment="Left" Height="35" Margin="314,202,0,0" TextWrapping="Wrap" Text="Duration" VerticalAlignment="Top" Width="146" Visibility="Hidden"/>
+            <TextBlock x:Name="CountDownSum" Foreground="MediumVioletRed" FontSize="20" FontStyle="Italic" TextAlignment="Center" HorizontalAlignment="Left" Height="35" Margin="314,202,0,0" TextWrapping="Wrap" Text="Duration" VerticalAlignment="Top" Width="146" Visibility="Hidden"/>
+        </Grid>
 
+        <!--Coutndown-->
+        <Grid x:Name="CountdownGrid" Visibility="Visible" >
+            <TextBlock x:Name="CountDownBlock" HorizontalAlignment="Left" Height="192" Margin="249,64,0,0" TextWrapping="Wrap" FontSize="45" TextAlignment="Center" FontStyle="Normal" VerticalAlignment="Top" Width="279"><Run Text="CountDown"/><InlineUIContainer>
+                    <Label Content="Hour" RenderTransformOrigin="-1.174,1.25" FontSize="30"/>
+
+                </InlineUIContainer><InlineUIContainer>
+                    <TextBox Height="42" TextWrapping="Wrap" Text="H" Width="46" FontSize="30" />
+
+                </InlineUIContainer><InlineUIContainer>
+                    <TextBox Height="42" TextWrapping="Wrap" Text="M" Width="46" FontSize="30" x:Name="HInput"/>
+                
+                </InlineUIContainer><InlineUIContainer>
+                    <TextBox Height="41" TextWrapping="Wrap" Text="S" Width="46" FontSize="30"/>
+                </InlineUIContainer><InlineUIContainer>
+                    <TextBlock x:Name="DisplayCountDown" x:FieldModifier="public" TextWrapping="Wrap" Text="DisplayCountDown" FontSize="25" Height="72" Width="214"/>
+                </InlineUIContainer><InlineUIContainer/></TextBlock>
+
+            <TextBlock x:Name="CountDownButtons" HorizontalAlignment="Left" Height="24" Margin="314,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Visibility="Visible"><Run Text=" "/><InlineUIContainer>
+                <Button Content="Stop Timer" Width="75" />
+            </InlineUIContainer><InlineUIContainer>
+                <Button  Content="Start Timer" Width="75" Click="CountDownStart" />
+            </InlineUIContainer></TextBlock>
+
+            <TextBlock x:Name="Duration" Foreground="MediumVioletRed" FontSize="20" FontStyle="Italic" TextAlignment="Center" HorizontalAlignment="Left" Height="35" Margin="314,202,0,0" TextWrapping="Wrap" Text="Duration" VerticalAlignment="Top" Width="146" Visibility="Hidden"/>
         </Grid>
 
 

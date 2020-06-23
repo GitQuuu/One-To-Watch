@@ -13,6 +13,7 @@ namespace one_two_watch.Models
         public  DateTime TimeStart { get; set; }
         public  DateTime TimeStop { get; set; }
 
+
         public StopWatch StartTimer()
         {
             TimeStart = DateTime.Now;
@@ -24,6 +25,7 @@ namespace one_two_watch.Models
         {
             TimeStop = DateTime.Now;
         }
+
 
     }
 }

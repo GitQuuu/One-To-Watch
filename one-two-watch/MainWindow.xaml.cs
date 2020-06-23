@@ -20,6 +20,7 @@ using one_two_watch.Interfaces;
 using one_two_watch.Models;
 
 
+
 namespace one_two_watch
 {
     /// <summary>
@@ -27,12 +28,14 @@ namespace one_two_watch
     /// </summary>
     public partial class MainWindow : Window , ICommons
     {
-    
+
 
         public MainWindow()
         {
 
             InitializeComponent();
+          
+
         }
 
         private DispatcherTimer _timer;
@@ -119,10 +122,6 @@ namespace one_two_watch
             
         }
 
-        private void CountDown(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
        StopWatch newStopwatch = new StopWatch();
         private void StartTimerClicked(object sender, RoutedEventArgs e)
@@ -147,5 +146,23 @@ namespace one_two_watch
             TimeStampStop.Visibility = Visibility.Visible;
             Duration.Visibility = Visibility.Visible;
         }
+
+        private void CountDown(object sender, RoutedEventArgs e)
+        {
+            CountdownGrid.Visibility = Visibility.Visible;
+
+        }
+
+
+        CountDown newCountDown = new CountDown();
+
+        private void CountDownStart(object sender, RoutedEventArgs e)
+        {
+            newCountDown.CountdownTime = 120;
+            newCountDown.Start();
+           
+        }
+
+        
     }
 }
