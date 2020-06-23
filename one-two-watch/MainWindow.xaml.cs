@@ -64,6 +64,8 @@ namespace one_two_watch
                 TimeStampStart.Visibility = Visibility.Hidden;
                 TimeStampStop.Visibility = Visibility.Hidden;
                 Duration.Visibility = Visibility.Hidden;
+
+                Display.Text = "Please power on watch";
             }
            
            
