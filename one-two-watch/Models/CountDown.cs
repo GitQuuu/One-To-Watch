@@ -11,8 +11,9 @@ namespace one_two_watch.Models
     public class CountDown:Watch
     {
         // Simple Countdown with c# WPF  https://www.youtube.com/watch?v=o_F_v_ISeDk
-
-        public int CountdownTime;
+        private int countdownTime;
+        public int CountdownTime { get; set; }
+       
         public DispatcherTimer CounTDownTimer;
 
         public void Start()
