@@ -13,28 +13,33 @@ namespace one_two_watch.Models
 {
     public class StopWatch:Watch, INotifyPropertyChanged
     {
-        private TimeSpan duration;
-        private DateTime timeStart;
-        private DateTime timeStop;
+        private TimeSpan _duration;
+        private DateTime _timeStart;
+        private DateTime _timeStop;
         public  TimeSpan Duration { get; set; }
 
         public DateTime TimeStart
         {
-            get { return timeStart; }
+            get { return _timeStart; }
             set
             {
-                timeStart = value;
+                _timeStart = value;
                 OnPropertyChanged();
             }
         }
 
         public  DateTime TimeStop { get; set; }
+        private ObservableCollection<DateTime> _dateTimeLogsCollection = new ObservableCollection<DateTime>();
+        public ObservableCollection<DateTime> DateTimeLogsCollection
+        {
+            get { return _dateTimeLogsCollection; }
+        }
 
-        private ObservableCollection<DateTime> dateTimeLogsCollection = new ObservableCollection<DateTime>();
-
+        
         public StopWatch StartTimer()
         {
-            dateTimeLogsCollection.Add(TimeStart = DateTime.Now);
+            TimeStart = DateTime.Now;
+            DateTimeLogsCollection.Add(TimeStart);
 
             return new StopWatch();
         }
@@ -42,7 +47,8 @@ namespace one_two_watch.Models
         public void StopTimer()
         {
             TimeStop = DateTime.Now;
-            dateTimeLogsCollection.Add(TimeStop);
+            DateTimeLogsCollection.Add(TimeStop);
+
         }
 
 

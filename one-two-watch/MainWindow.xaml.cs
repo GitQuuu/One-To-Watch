@@ -34,8 +34,8 @@ namespace one_two_watch
         {
 
             InitializeComponent();
-          
 
+            this.DataContext = this;
         }
 
         private DispatcherTimer _timer;
@@ -100,7 +100,6 @@ namespace one_two_watch
             if (!Menu.IsVisible)
             {
                 Display.Visibility = Visibility.Hidden;
-                DataGridDisplay.Visibility = Visibility.Hidden;
                 Menu.Visibility = Visibility.Visible;
                 
 

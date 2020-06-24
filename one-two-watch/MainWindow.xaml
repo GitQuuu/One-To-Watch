@@ -31,11 +31,11 @@
                 </InlineUIContainer><InlineUIContainer>
                     <Button  Content="Start Timer" Width="75" Click="StartTimerClicked"/>
                 </InlineUIContainer></TextBlock>
-            <DataGrid  x:Name="DataGridDisplay" ItemsSource="{Binding dateTimeLogsCollection, Mode=TwoWay}"  HorizontalAlignment="Left" Height="133" Margin="24,21,0,0" VerticalAlignment="Top" Width="217" >
+            <DataGrid  x:Name="DataGridDisplay" ItemsSource="{Binding Source= DateTimeLogsCollection}" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="133" Margin="24,21,0,0" VerticalAlignment="Top" Width="217" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Stopwatch start" Binding="{Binding timeStart}"/>
-                    <DataGridTextColumn Header="Stopwatch stop" Binding="{Binding timeStop}"/>
-                    <DataGridTextColumn Header="Timespan"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Stopwatch start" Binding="{Binding TimeStart}"/>
+                    <DataGridTextColumn Header="Stopwatch stop" Binding="{Binding TimeStop}"/>
+                    <DataGridTextColumn Header="Timespan" Binding="{Binding Duration}"></DataGridTextColumn>
                 </DataGrid.Columns>
                 
             </DataGrid>
