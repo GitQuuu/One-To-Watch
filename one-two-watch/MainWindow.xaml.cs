@@ -29,8 +29,8 @@ namespace one_two_watch
     /// </summary>
     public partial class MainWindow : Window , ICommons
     {
-        private ObservableCollection<DateTime> _dateTimeLogsCollection = new ObservableCollection<DateTime>();
-        public ObservableCollection<DateTime> DateTimeLogsCollection
+        private ObservableCollection<StopWatch> _dateTimeLogsCollection = new ObservableCollection<StopWatch>();
+        public ObservableCollection<StopWatch> DateTimeLogsCollection
         {
             get { return _dateTimeLogsCollection; }
         }
@@ -72,9 +72,6 @@ namespace one_two_watch
                 Menu.Visibility = Visibility.Hidden;
                 DataGridDisplay.Visibility = Visibility.Hidden;
                 Display.Visibility = Visibility.Visible;
-                TimeStampStart.Visibility = Visibility.Hidden;
-                TimeStampStop.Visibility = Visibility.Hidden;
-                Duration.Visibility = Visibility.Hidden;
 
                 Display.Text = "Please power on watch";
             }
@@ -91,9 +88,6 @@ namespace one_two_watch
                 DataGridDisplay.Visibility = Visibility.Hidden;
                 DataGridDisplay.Visibility = Visibility.Hidden;
                 StopWatchButtons.Visibility = Visibility.Hidden;
-                TimeStampStart.Visibility = Visibility.Hidden;
-                TimeStampStop.Visibility = Visibility.Hidden;
-                Duration.Visibility = Visibility.Hidden;
                 CountdownGrid.Visibility = Visibility.Hidden;
             }
         }
@@ -118,6 +112,7 @@ namespace one_two_watch
                
                 Display.Visibility = Visibility.Visible;
                 StopWatchGrid.Visibility = Visibility.Visible;
+                DataGridDisplay.Visibility = Visibility.Visible;
                 Menu.Visibility = Visibility.Collapsed;
                 CountdownGrid.Visibility = Visibility.Hidden;
                 
@@ -129,33 +124,25 @@ namespace one_two_watch
         }
 
 
-       StopWatch newStopwatch = new StopWatch();
+        private StopWatch newStopwatch = new StopWatch();
         private void StartTimerClicked(object sender, RoutedEventArgs e)
         {
-            
-            DateTimeLogsCollection.Add(newStopwatch.StartTimer());
 
-            TimeStampStart.Text = Convert.ToString(newStopwatch.TimeStart.ToString("F", new CultureInfo("da-DK")));
-           
-            TimeStampStart.Visibility = Visibility.Visible;
-            TimeStampStop.Visibility = Visibility.Visible;
-            Duration.Visibility = Visibility.Hidden;
+            newStopwatch.Id++;
+            newStopwatch.TimeStart = DateTime.Now;
+            DateTimeLogsCollection.Add(newStopwatch);
+
 
         }
 
         private void StopTimerClicked(object sender, RoutedEventArgs e)
         {
-            DateTimeLogsCollection.Add(newStopwatch.StopTimer());
-            
+         
+            newStopwatch.TimeStop = DateTime.Now;
+            DateTimeLogsCollection.Add(newStopwatch);
 
-            TimeStampStop.Text = Convert.ToString(newStopwatch.TimeStop.ToString("F", new CultureInfo("da-DK")));
 
-            newStopwatch.Duration = newStopwatch.TimeStop - newStopwatch.TimeStart;
-            Duration.Text = newStopwatch.Duration.ToString();
 
-            TimeStampStart.Visibility = Visibility.Visible;
-            TimeStampStop.Visibility = Visibility.Visible;
-            Duration.Visibility = Visibility.Visible;
         }
 
         private void CountDown(object sender, RoutedEventArgs e)

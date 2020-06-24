@@ -12,10 +12,17 @@ using one_two_watch.Annotations;
 namespace one_two_watch.Models
 {
     public class StopWatch:Watch, INotifyPropertyChanged
+
     {
+        private readonly MainWindow _mainWindow;
+
         public StopWatch()
         {
             
+        }
+        public StopWatch(MainWindow mainWindow)
+        {
+            _mainWindow = mainWindow;
         }
 
         public StopWatch(DateTime timeStart, DateTime timeStop , TimeSpan duration)
@@ -26,12 +33,29 @@ namespace one_two_watch.Models
         }
 
         // fields
+        private int _id;
         private TimeSpan _duration;
         private DateTime _timeStart;
         private DateTime _timeStop;
 
         // properties
-        public  TimeSpan Duration { get; set; }
+
+        public int Id
+        {
+            get { return _id; }
+            set
+            {
+                _id = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public  TimeSpan Duration {
+
+            get { return _duration; }
+            set { _duration = _timeStart - _timeStop; }
+
+        }
 
         public DateTime TimeStart
         {
@@ -58,14 +82,15 @@ namespace one_two_watch.Models
         // Methods
         public DateTime StartTimer()
         {
+            
            return TimeStart = DateTime.Now;
+
+
         }
 
         public DateTime StopTimer()
         {
             return TimeStop = DateTime.Now;
-            
-
         }
 
 
