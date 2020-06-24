@@ -25,16 +25,24 @@
             </InlineUIContainer></TextBlock>
 
         <!--Stopwatch-->
-        <Grid x:Name="StopWatchGrid" Visibility="Hidden">
-            <TextBlock x:Name="StopWatchBlock" HorizontalAlignment="Left" Height="138" Margin="250,86,0,0" TextWrapping="Wrap" FontSize="45" TextAlignment="Center" FontStyle="Normal" Visibility="Hidden" VerticalAlignment="Top" Width="279"><Run Text="Stopwatch"/></TextBlock>
+        <Grid x:Name="StopWatchGrid" Visibility="Visible">
             <TextBlock x:Name="StopWatchButtons" HorizontalAlignment="Left" Height="24" Margin="314,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ><Run Text=" "/><InlineUIContainer>
                     <Button Content="Stop Timer" Width="75" Click="StopTimerClicked"/>
                 </InlineUIContainer><InlineUIContainer>
                     <Button  Content="Start Timer" Width="75" Click="StartTimerClicked"/>
                 </InlineUIContainer></TextBlock>
-            <TextBlock x:Name="TimeStampStart" HorizontalAlignment="Left" Height="32" Margin="441,229,0,0" TextWrapping="Wrap" Text="Timestamp Start" VerticalAlignment="Top" Width="134" Visibility="Hidden"/>
-            <TextBlock x:Name="TimeStampStop" HorizontalAlignment="Left" Height="32" Margin="234,229,0,0" TextWrapping="Wrap" Text="Timestamp Stop" VerticalAlignment="Top" Width="134" Visibility="Hidden"/>
-            <TextBlock x:Name="Duration" Foreground="MediumVioletRed" FontSize="20" FontStyle="Italic" TextAlignment="Center" HorizontalAlignment="Left" Height="35" Margin="314,202,0,0" TextWrapping="Wrap" Text="Duration" VerticalAlignment="Top" Width="146" Visibility="Hidden"/>
+            <DataGrid  x:Name="DataGridDisplay" ItemsSource="{Binding dateTimeLogsCollection, Mode=TwoWay}"  HorizontalAlignment="Left" Height="133" Margin="24,21,0,0" VerticalAlignment="Top" Width="217" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Stopwatch start" Binding="{Binding timeStart}"/>
+                    <DataGridTextColumn Header="Stopwatch stop" Binding="{Binding timeStop}"/>
+                    <DataGridTextColumn Header="Timespan"></DataGridTextColumn>
+                </DataGrid.Columns>
+                
+            </DataGrid>
+
+            <TextBlock x:Name="TimeStampStart" HorizontalAlignment="Left" Height="32" Margin="441,229,0,0" TextWrapping="Wrap" Text="Timestamp Start" VerticalAlignment="Top" Width="134" Visibility="Visible"/>
+            <TextBlock x:Name="TimeStampStop" HorizontalAlignment="Left" Height="32" Margin="234,229,0,0" TextWrapping="Wrap" Text="Timestamp Stop" VerticalAlignment="Top" Width="134" Visibility="Visible"/>
+            <TextBlock x:Name="Duration" Foreground="MediumVioletRed" FontSize="20" FontStyle="Italic" TextAlignment="Center" HorizontalAlignment="Left" Height="35" Margin="314,202,0,0" TextWrapping="Wrap" Text="Duration" VerticalAlignment="Top" Width="146" Visibility="Visible"/>
         </Grid>
 
         <!--Coutndown-->

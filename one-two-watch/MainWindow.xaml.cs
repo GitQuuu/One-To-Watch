@@ -66,7 +66,7 @@ namespace one_two_watch
             if (!Display.IsVisible)
             {
                 Menu.Visibility = Visibility.Hidden;
-                StopWatchBlock.Visibility = Visibility.Hidden;
+                DataGridDisplay.Visibility = Visibility.Hidden;
                 Display.Visibility = Visibility.Visible;
                 TimeStampStart.Visibility = Visibility.Hidden;
                 TimeStampStop.Visibility = Visibility.Hidden;
@@ -80,12 +80,12 @@ namespace one_two_watch
 
         public void HideDisplay(object sender, EventArgs e)
         {
-            if (Menu.IsVisible || Display.IsVisible || StopWatchBlock.IsVisible || StopWatchBlock.IsVisible || StopWatchButtons.IsVisible || CountdownGrid.IsVisible)
+            if (Menu.IsVisible || Display.IsVisible || DataGridDisplay.IsVisible || DataGridDisplay.IsVisible || StopWatchButtons.IsVisible || CountdownGrid.IsVisible)
             {
                 Menu.Visibility = Visibility.Hidden;
                 Display.Visibility = Visibility.Hidden;
-                StopWatchBlock.Visibility = Visibility.Hidden;
-                StopWatchBlock.Visibility = Visibility.Hidden;
+                DataGridDisplay.Visibility = Visibility.Hidden;
+                DataGridDisplay.Visibility = Visibility.Hidden;
                 StopWatchButtons.Visibility = Visibility.Hidden;
                 TimeStampStart.Visibility = Visibility.Hidden;
                 TimeStampStop.Visibility = Visibility.Hidden;
@@ -100,7 +100,7 @@ namespace one_two_watch
             if (!Menu.IsVisible)
             {
                 Display.Visibility = Visibility.Hidden;
-                StopWatchBlock.Visibility = Visibility.Hidden;
+                DataGridDisplay.Visibility = Visibility.Hidden;
                 Menu.Visibility = Visibility.Visible;
                 
 
@@ -110,12 +110,14 @@ namespace one_two_watch
 
         private void StopWatch(object sender, RoutedEventArgs e)
         {
-            if (!StopWatchBlock.IsVisible)
+            if (!StopWatchGrid.IsVisible)
             {
+               
                 Display.Visibility = Visibility.Visible;
+                StopWatchGrid.Visibility = Visibility.Visible;
                 Menu.Visibility = Visibility.Collapsed;
                 CountdownGrid.Visibility = Visibility.Hidden;
-                StopWatchGrid.Visibility = Visibility.Visible;
+                
 
 
 
@@ -128,7 +130,9 @@ namespace one_two_watch
         private void StartTimerClicked(object sender, RoutedEventArgs e)
         {
             newStopwatch.StartTimer();
+
             TimeStampStart.Text = Convert.ToString(newStopwatch.TimeStart.ToString("F", new CultureInfo("da-DK")));
+           
             TimeStampStart.Visibility = Visibility.Visible;
             TimeStampStop.Visibility = Visibility.Visible;
             Duration.Visibility = Visibility.Hidden;
@@ -138,6 +142,7 @@ namespace one_two_watch
         private void StopTimerClicked(object sender, RoutedEventArgs e)
         {
             newStopwatch.StopTimer();
+
             TimeStampStop.Text = Convert.ToString(newStopwatch.TimeStop.ToString("F", new CultureInfo("da-DK")));
 
             newStopwatch.Duration = newStopwatch.TimeStop - newStopwatch.TimeStart;
