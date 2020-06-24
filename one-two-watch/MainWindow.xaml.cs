@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
@@ -61,7 +62,7 @@ namespace one_two_watch
 
         private void PowerOff(object sender, RoutedEventArgs e)
         {
-            Dispatcher.CurrentDispatcher.BeginInvokeShutdown(DispatcherPriority.Background);
+            Application.Current.Shutdown();
             
         }
 
@@ -136,7 +137,8 @@ namespace one_two_watch
 
             DateTimeLogsCollection.Add(newStopwatch);
 
-
+            // use this because Timespan in Datagrid in xaml wouldnt update without clicking on it https://stackoverflow.com/questions/4916521/how-do-i-refresh-window-in-wpf
+            DataGridDisplay.Items.Refresh();
         }
 
         private void StopTimerClicked(object sender, RoutedEventArgs e)
@@ -145,7 +147,10 @@ namespace one_two_watch
             StopWatch newStopwatch = DateTimeLogsCollection[DateTimeLogsCollection.Count - 1];
             
             newStopwatch.TimeStop = newStopwatch.StopTimer();
-            
+
+            // use this because Timespan in Datagrid in xaml wouldnt update without clicking on it https://stackoverflow.com/questions/4916521/how-do-i-refresh-window-in-wpf
+            DataGridDisplay.Items.Refresh();
+
         }
 
         private void CountDown(object sender, RoutedEventArgs e)
