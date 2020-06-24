@@ -35,7 +35,6 @@ namespace one_two_watch
 
             InitializeComponent();
 
-            this.DataContext = this;
         }
 
         private DispatcherTimer _timer;
