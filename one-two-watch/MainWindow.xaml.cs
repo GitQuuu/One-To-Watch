@@ -123,11 +123,11 @@ namespace one_two_watch
             
         }
 
+        StopWatch newStopwatch = new StopWatch();
 
-        private StopWatch newStopwatch = new StopWatch();
         private void StartTimerClicked(object sender, RoutedEventArgs e)
-        {
-
+        { 
+            
             newStopwatch.Id++;
             newStopwatch.TimeStart = DateTime.Now;
             DateTimeLogsCollection.Add(newStopwatch);
@@ -137,7 +137,7 @@ namespace one_two_watch
 
         private void StopTimerClicked(object sender, RoutedEventArgs e)
         {
-         
+           
             newStopwatch.TimeStop = DateTime.Now;
             DateTimeLogsCollection.Add(newStopwatch);
 

@@ -50,10 +50,15 @@ namespace one_two_watch.Models
             }
         }
 
-        public  TimeSpan Duration {
+        public  TimeSpan Duration
+        {
 
-            get { return _duration; }
-            set { _duration = _timeStart - _timeStop; }
+            get { return _duration = _timeStop - _timeStart; }
+            set 
+            { 
+                _duration = value; 
+                OnPropertyChanged();
+            }
 
         }
 
