@@ -37,11 +37,12 @@ namespace one_two_watch
 
         public MainWindow()
         {
-
+            
             InitializeComponent();
             this.DataContext = this;
         }
-
+        
+        
         private DispatcherTimer _timer;
         DateTime _start;
 
@@ -129,7 +130,9 @@ namespace one_two_watch
         {
             StopWatch newStopwatch = new StopWatch();
             newStopwatch.Id = DateTimeLogsCollection.Count + 1;
-            newStopwatch.TimeStart = DateTime.Now;
+
+            newStopwatch.TimeStart = newStopwatch.StartTimer();
+
             DateTimeLogsCollection.Add(newStopwatch);
 
 
@@ -137,8 +140,10 @@ namespace one_two_watch
 
         private void StopTimerClicked(object sender, RoutedEventArgs e)
         {
+            // find last watch to stop
             StopWatch newStopwatch = DateTimeLogsCollection[DateTimeLogsCollection.Count - 1];
-            newStopwatch.TimeStop = DateTime.Now;
+            
+            newStopwatch.TimeStop = newStopwatch.StopTimer();
         }
 
         private void CountDown(object sender, RoutedEventArgs e)

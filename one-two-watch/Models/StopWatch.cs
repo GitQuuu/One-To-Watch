@@ -2,34 +2,36 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using one_two_watch.Annotations;
 
 namespace one_two_watch.Models
 {
-    public class StopWatch:Watch, INotifyPropertyChanged
+    public class StopWatch : Stopwatch, INotifyPropertyChanged
 
     {
         private readonly MainWindow _mainWindow;
 
         public StopWatch()
         {
-            
+
         }
         public StopWatch(MainWindow mainWindow)
         {
             _mainWindow = mainWindow;
         }
 
-        public StopWatch(DateTime timeStart, DateTime timeStop , TimeSpan duration)
+        public StopWatch(DateTime timeStart, DateTime timeStop, TimeSpan duration)
         {
             TimeStart = timeStart;
             TimeStop = timeStop;
-            //Duration = duration;
+            Duration = duration;
         }
 
         // fields
@@ -50,10 +52,10 @@ namespace one_two_watch.Models
             }
         }
 
-        public  TimeSpan Duration
+        public TimeSpan Duration
         {
 
-            get { return _duration = _timeStart - _timeStop; }
+            get { return _duration; }
             set
             {
                 _duration = value;
@@ -87,15 +89,16 @@ namespace one_two_watch.Models
         // Methods
         public DateTime StartTimer()
         {
-            
-           return TimeStart = DateTime.Now;
-
-
+            Start();
+            return TimeStart = DateTime.Now;
         }
 
         public DateTime StopTimer()
         {
+            Stop();
+            _duration = Elapsed;
             return TimeStop = DateTime.Now;
+
         }
 
 
