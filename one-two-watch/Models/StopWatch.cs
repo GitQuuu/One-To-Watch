@@ -29,7 +29,7 @@ namespace one_two_watch.Models
         {
             TimeStart = timeStart;
             TimeStop = timeStop;
-            Duration = duration;
+            //Duration = duration;
         }
 
         // fields
@@ -53,10 +53,10 @@ namespace one_two_watch.Models
         public  TimeSpan Duration
         {
 
-            get { return _duration = _timeStop - _timeStart; }
-            set 
-            { 
-                _duration = value; 
+            get { return _duration = _timeStart - _timeStop; }
+            set
+            {
+                _duration = value;
                 OnPropertyChanged();
             }
 
