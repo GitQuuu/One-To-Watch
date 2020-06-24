@@ -129,6 +129,7 @@ namespace one_two_watch
         private void StartTimerClicked(object sender, RoutedEventArgs e)
         {
             StopWatch newStopwatch = new StopWatch();
+
             newStopwatch.Id = DateTimeLogsCollection.Count + 1;
 
             newStopwatch.TimeStart = newStopwatch.StartTimer();
@@ -144,6 +145,7 @@ namespace one_two_watch
             StopWatch newStopwatch = DateTimeLogsCollection[DateTimeLogsCollection.Count - 1];
             
             newStopwatch.TimeStop = newStopwatch.StopTimer();
+            
         }
 
         private void CountDown(object sender, RoutedEventArgs e)
