@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
@@ -28,13 +29,17 @@ namespace one_two_watch
     /// </summary>
     public partial class MainWindow : Window , ICommons
     {
-
+        private ObservableCollection<DateTime> _dateTimeLogsCollection = new ObservableCollection<DateTime>();
+        public ObservableCollection<DateTime> DateTimeLogsCollection
+        {
+            get { return _dateTimeLogsCollection; }
+        }
 
         public MainWindow()
         {
 
             InitializeComponent();
-
+            this.DataContext = this;
         }
 
         private DispatcherTimer _timer;
@@ -127,7 +132,8 @@ namespace one_two_watch
        StopWatch newStopwatch = new StopWatch();
         private void StartTimerClicked(object sender, RoutedEventArgs e)
         {
-            newStopwatch.StartTimer();
+            
+            DateTimeLogsCollection.Add(newStopwatch.StartTimer());
 
             TimeStampStart.Text = Convert.ToString(newStopwatch.TimeStart.ToString("F", new CultureInfo("da-DK")));
            
@@ -139,7 +145,8 @@ namespace one_two_watch
 
         private void StopTimerClicked(object sender, RoutedEventArgs e)
         {
-            newStopwatch.StopTimer();
+            DateTimeLogsCollection.Add(newStopwatch.StopTimer());
+            
 
             TimeStampStop.Text = Convert.ToString(newStopwatch.TimeStop.ToString("F", new CultureInfo("da-DK")));
 

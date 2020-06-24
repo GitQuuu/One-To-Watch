@@ -43,27 +43,28 @@ namespace one_two_watch.Models
             }
         }
 
-        public  DateTime TimeStop { get; set; }
-
-        private ObservableCollection<DateTime> _dateTimeLogsCollection = new ObservableCollection<DateTime>();
-        public ObservableCollection<DateTime> DateTimeLogsCollection
+        public DateTime TimeStop
         {
-            get { return _dateTimeLogsCollection; }
+            get { return _timeStop; }
+            set
+            {
+                _timeStop = value;
+                OnPropertyChanged();
+            }
         }
+
+
 
         // Methods
-        public StopWatch StartTimer()
+        public DateTime StartTimer()
         {
-            TimeStart = DateTime.Now;
-            DateTimeLogsCollection.Add(TimeStart);
-
-            return new StopWatch();
+           return TimeStart = DateTime.Now;
         }
 
-        public void StopTimer()
+        public DateTime StopTimer()
         {
-            TimeStop = DateTime.Now;
-            DateTimeLogsCollection.Add(TimeStop);
+            return TimeStop = DateTime.Now;
+            
 
         }
 
