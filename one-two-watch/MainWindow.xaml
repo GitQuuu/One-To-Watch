@@ -61,9 +61,9 @@
 
 
         <Button Background="LawnGreen" Content="Power On" HorizontalAlignment="Left" Height="25" Margin="357,299,0,0" VerticalAlignment="Top" Width="68" Click="PowerOn"/>
-        <Button Background="Red" Content="Hide Display" HorizontalAlignment="Left" Height="25" Margin="259,299,0,0" VerticalAlignment="Top" Width="79" Click="HideDisplay" />
+        <Button Background="Orange" Content="Hide Display" HorizontalAlignment="Left" Height="25" Margin="259,299,0,0" VerticalAlignment="Top" Width="79" Click="HideDisplay" />
         <Button Background="Bisque" Content="Show Display" HorizontalAlignment="Left" Height="25" Margin="445,299,0,0" VerticalAlignment="Top" Width="84" Click="ShowDisplay" />
-        <Button Content="Power Off" HorizontalAlignment="Left" Margin="357,331,0,0" VerticalAlignment="Top" Width="68" Height="21" Click="PowerOff"/>
+        <Button Background="Red" Content="Power Off" HorizontalAlignment="Left" Margin="357,331,0,0" VerticalAlignment="Top" Width="68" Height="21" Click="PowerOff"/>
         <Button Content="Mode" HorizontalAlignment="Left" Height="21" Margin="445,331,0,0" VerticalAlignment="Top" Width="36" Click="Mode"/>
 
 
