@@ -171,6 +171,9 @@ namespace one_two_watch
            
         }
 
-        
+        private void Alarms(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

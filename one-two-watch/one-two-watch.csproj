@@ -70,6 +70,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Alarms.cs" />
     <Compile Include="Models\CountDown.cs" />
     <Compile Include="Models\StopWatch.cs" />
     <Compile Include="Models\Watch.cs" />
