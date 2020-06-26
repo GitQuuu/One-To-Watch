@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace one_two_watch.Models
 {
-    class Alarms: Stopwatch
+    public class Alarms: Stopwatch
     {
-        ObservableCollection<DateTime> alarmsCollection = new ObservableCollection<DateTime>();
         public DateTime AlertTime { get; set; }
     }
 }

@@ -31,9 +31,18 @@ namespace one_two_watch
     public partial class MainWindow : Window , ICommons
     {
         private ObservableCollection<StopWatch> _dateTimeLogsCollection = new ObservableCollection<StopWatch>();
+        private ObservableCollection<Alarms> _alarmsCollection = new ObservableCollection<Alarms>(
+
+        );
+
         public ObservableCollection<StopWatch> DateTimeLogsCollection
         {
             get { return _dateTimeLogsCollection; }
+        }
+
+        public ObservableCollection<Alarms> AlarmsCollection
+        {
+            get { return _alarmsCollection; }
         }
 
         public MainWindow()
