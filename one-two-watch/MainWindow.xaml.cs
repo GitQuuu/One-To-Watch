@@ -201,6 +201,7 @@ namespace one_two_watch
         private void SetAlarm(object sender, RoutedEventArgs e)
         {
             Alarms alarms = new Alarms();
+            alarms.Id = AlarmsCollection.Count + 1;
             alarms.LogAlarm();
             AlarmsCollection.Add(alarms);
             AlarmsGridDisplay.Items.Refresh();
