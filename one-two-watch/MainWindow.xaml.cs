@@ -30,6 +30,7 @@ namespace one_two_watch
     /// </summary>
     public partial class MainWindow : Window , ICommons
     {
+        // Datagrid vs Listbox to use with ObservableCollection - https://stackoverflow.com/questions/3211057/wpf-datagrid-vs-listbox
         private ObservableCollection<StopWatch> _dateTimeLogsCollection = new ObservableCollection<StopWatch>();
         private ObservableCollection<Alarms> _alarmsCollection = new ObservableCollection<Alarms>(
 
@@ -124,9 +125,10 @@ namespace one_two_watch
                 Display.Visibility = Visibility.Visible;
                 StopWatchGrid.Visibility = Visibility.Visible;
                 DataGridDisplay.Visibility = Visibility.Visible;
-                Menu.Visibility = Visibility.Collapsed;
+                Menu.Visibility = Visibility.Visible;
                 CountdownGrid.Visibility = Visibility.Hidden;
-                
+                AlarmsGrid.Visibility = Visibility.Hidden;
+
 
 
 
@@ -166,6 +168,7 @@ namespace one_two_watch
         {
             CountdownGrid.Visibility = Visibility.Visible;
             StopWatchGrid.Visibility = Visibility.Hidden;
+            AlarmsGrid.Visibility = Visibility.Hidden;
         }
 
 
@@ -182,7 +185,25 @@ namespace one_two_watch
 
         private void Alarms(object sender, RoutedEventArgs e)
         {
+            if (!AlarmsGrid.IsVisible)
+            {
+                AlarmsGrid.Visibility = Visibility.Visible;
+                StopWatchGrid.Visibility = Visibility.Hidden;
+                DataGridDisplay.Visibility = Visibility.Hidden;
+                Menu.Visibility = Visibility.Visible;
+                CountdownGrid.Visibility = Visibility.Hidden;
+                Display.Visibility = Visibility.Hidden;
 
+                AlarmsGridDisplay.Items.Refresh();
+            }
+        }
+
+        private void SetAlarm(object sender, RoutedEventArgs e)
+        {
+            Alarms alarms = new Alarms();
+            alarms.LogAlarm();
+            AlarmsCollection.Add(alarms);
+            AlarmsGridDisplay.Items.Refresh();
         }
     }
 }

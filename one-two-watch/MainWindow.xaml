@@ -9,27 +9,28 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="9*"/>
         </Grid.ColumnDefinitions>
-        <Ellipse Fill="Azure" HorizontalAlignment="Left" Height="362" Margin="202,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="383"/>
-        <TextBlock x:Name="Display" HorizontalAlignment="Left" Height="106" Margin="259,64,0,0" TextWrapping="Wrap" Text="One-Two-Watch" FontSize="35" TextAlignment="Center" FontStyle="Normal" Visibility="Hidden" VerticalAlignment="Top" Width="279"/>
+        <Ellipse Fill="Azure" HorizontalAlignment="Left" Height="362" Margin="202,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="383" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="Display" HorizontalAlignment="Left" Height="106" Margin="259,64,0,0" TextWrapping="Wrap" Text="One-Two-Watch" FontSize="35" TextAlignment="Center" FontStyle="Normal" Visibility="Hidden" VerticalAlignment="Top" Width="279" Grid.ColumnSpan="2"/>
 
-        <TextBlock x:Name="Menu" TextAlignment="Center" FontSize="15"  HorizontalAlignment="Left" Height="29" Margin="268,64,0,0" VerticalAlignment="Top" Width="246" Visibility="Visible" >
+        <TextBlock x:Name="Menu" TextAlignment="Center" FontSize="10"  HorizontalAlignment="Left" Height="29" Margin="268,55,0,0" VerticalAlignment="Top" Width="246" Visibility="Hidden" Grid.ColumnSpan="2" >
             
             <InlineUIContainer>
-                <Button Content="Stopwatch"  Width="75" Click="StopWatch"/>
+                <Button Content="Stopwatch"  Width="50" Click="StopWatch"/>
             </InlineUIContainer><Run Text=" "/>
 
             <InlineUIContainer>
-                <Button Content="Alarms" Width="75" Height="24" Click="Alarms"/>
+                <Button Content="Alarms" Width="50" Click="Alarms"/>
             </InlineUIContainer><Run Text=" "/>
             <InlineUIContainer>
-                <Button Content="Countdown"  Width="75" Click="CountDown"/>
+                <Button Content="Countdown"  Width="50"  Click="CountDown"/>
             </InlineUIContainer>
         </TextBlock>
 
         <!--Stopwatch-->
-        <Grid x:Name="StopWatchGrid" Visibility="Hidden">
+        <Grid x:Name="StopWatchGrid" Visibility="Hidden" Grid.ColumnSpan="2">
             <TextBlock x:Name="StopWatchButtons" HorizontalAlignment="Left" Height="24" Margin="314,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ><Run Text=" "/><InlineUIContainer>
                     <Button Content="Stop Timer" Width="75" Click="StopTimerClicked"/>
                 </InlineUIContainer><InlineUIContainer>
@@ -47,9 +48,9 @@
         </Grid>
 
         <!--Countdown-->
-        <Grid x:Name="CountdownGrid" Visibility="Hidden" >
-            <TextBlock x:Name="CountDownBlock" HorizontalAlignment="Left" Height="192" Margin="249,64,0,0" TextWrapping="Wrap" FontSize="45" TextAlignment="Center" FontStyle="Normal" VerticalAlignment="Top" Width="279"><Run Text=""/><InlineUIContainer>
-                    <Label Content="Input in secounds" RenderTransformOrigin="-1.174,1.25" FontSize="30"/>
+        <Grid x:Name="CountdownGrid" Visibility="Hidden" Grid.ColumnSpan="2" >
+            <TextBlock x:Name="CountDownBlock" HorizontalAlignment="Left" Height="174" Margin="249,82,0,0" TextWrapping="Wrap" FontSize="45" TextAlignment="Center" FontStyle="Normal" VerticalAlignment="Top" Width="279"><Run Text=""/><InlineUIContainer>
+                    <Label Content="Input in secounds" RenderTransformOrigin="-1.174,1.25" FontSize="25"/>
 
                 </InlineUIContainer><InlineUIContainer>
                     <TextBox x:Name="CountdownInput"  Height="42" TextWrapping="Wrap" Width="96" FontSize="30" />
@@ -66,22 +67,22 @@
         </Grid>
 
         <!--Alarms-->
-        <Grid x:Name="AlarmsGrid" Visibility="Visible">
-            <DataGrid CanUserDeleteRows="True" HorizontalAlignment="Left" Height="139" Margin="246,102,0,0" VerticalAlignment="Top" Width="292">
+        <Grid x:Name="AlarmsGrid" Visibility="Visible" Grid.ColumnSpan="2">
+            <DataGrid x:Name="AlarmsGridDisplay" ItemsSource="{Binding AlarmsCollection}" AutoGenerateColumns="True" CanUserDeleteRows="True" HorizontalAlignment="Left" Height="139" Margin="246,102,0,0" VerticalAlignment="Top" Width="292">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Set Alarm"></DataGridTextColumn>
+                    <!-- no need to specify since its databinding to our AlarmsCollection-->
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button Content="Set Alarm" Width="75" Click="StopTimerClicked" Margin="355,257,362,143"/>
+            <Button Content="Set Alarm" Width="75" Click="SetAlarm" Margin="354,262,363,130"/>
 
         </Grid>
 
         <Button Background="LawnGreen" Content="Power On" HorizontalAlignment="Left" Height="25" Margin="357,299,0,0" VerticalAlignment="Top" Width="68" Click="PowerOn"/>
         <Button Background="Orange" Content="Hide Display" HorizontalAlignment="Left" Height="25" Margin="259,299,0,0" VerticalAlignment="Top" Width="79" Click="HideDisplay" />
-        <Button Background="Bisque" Content="Show Display" HorizontalAlignment="Left" Height="25" Margin="445,299,0,0" VerticalAlignment="Top" Width="84" Click="ShowDisplay" />
+        <Button Background="Bisque" Content="Show Display" HorizontalAlignment="Left" Height="25" Margin="445,299,0,0" VerticalAlignment="Top" Width="84" Click="ShowDisplay" Grid.ColumnSpan="2" />
         <Button Background="Red" Content="Power Off" HorizontalAlignment="Left" Margin="357,331,0,0" VerticalAlignment="Top" Width="68" Height="21" Click="PowerOff"/>
-        <Button Content="Mode" HorizontalAlignment="Left" Height="21" Margin="445,331,0,0" VerticalAlignment="Top" Width="36" Click="Mode" />
+        <Button Content="Mode" HorizontalAlignment="Left" Height="21" Margin="445,331,0,0" VerticalAlignment="Top" Width="36" Click="Mode" Grid.ColumnSpan="2" />
 
 
 
